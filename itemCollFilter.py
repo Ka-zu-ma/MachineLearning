@@ -6,17 +6,29 @@ import numpy as np
 import pandas as pd
 from scipy.spatial.distance import cosine
 
+#sepで区切り文字指定、namesでカラム名指定
 df = pd.read_csv('u.data', sep = '\t', names = ['user_id','item_id','rating','timestamp'])
+
+print(df)
 
 shape = (df.max().ix['user_id'],df.max().ix['item_id'])
 
+#ゼロ埋めの初期化　ダブルで渡すと、多次元配列が可能
 R = np.zeros(shape)
+
+# print(shape)
+print(R)
+
+
 
 for i in df.index:
 	row = df.ix[i]
 	R[row['user_id'] - 1, row['item_id'] - 1] = row['rating']
 
+
 print(R);
+
+exit()
 
 #step1 アイテムの類似度を計算する
 
@@ -81,6 +93,7 @@ def predict(u,sims):
 	return prediction
 
 u = np.array([5, 0, 1])
+sims = np.array([ [1, 0.2, 0], [0.2, 1, 0.1], [0, 0.1, 1] ])
 
 print (predict(u,sims))
 
