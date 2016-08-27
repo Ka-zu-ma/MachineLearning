@@ -88,6 +88,7 @@ Zmax,Zmin = Z.max(),Z.min()
 Z = (Z - Zmin)/(Zmax - Zmin)
 print(Z)
 
+#23
 
 
 
