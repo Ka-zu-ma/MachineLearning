@@ -7,3 +7,5 @@
 
 ###pythonライブラリ
 -numpy
+
+参考URLhttp://goo.gl/iJw6Jk
