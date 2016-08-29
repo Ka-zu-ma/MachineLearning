@@ -109,6 +109,52 @@ z = np.ma.compress_cols(np.ma.masked_invalid(x))
 
 #配列を連結する(行方向、列方向)
 
+x1 = np.arange(start = 0,stop = 3)
+
+x2 = np.arange(start = 3,stop = 6)
+
+
+
+
+
+#行を追加
+z = np.vstack([x1,x2])
+
+
+#列を追加
+
+z = np.hstack([x1,x2])
+z = np.r_[x1,x2]#上と同じ
+
+
+#行を追加(補足)
+
+z = np.dstack([x1,x2])
+
+z = np.c_[x1,x2] #上と同じ
+
+z = np.vstack([x1,x2]).T #vstackの結果を転置
+
+#転置行列とは、m 行 n 列の行列 A に対して A の (i, j) 要素と (j, i) 要素を入れ替えた n 行 m 列の行列
+
+
+#<集計する(基本統計量、行方向、列方向)>
+
+x = np.arange(10)
+
+#合計
+z = x.sum()
+
+
+
+
+
+
+
+
+
+
+
 
 
 print(z)
