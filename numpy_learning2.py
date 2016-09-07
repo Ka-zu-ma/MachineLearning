@@ -146,15 +146,26 @@ x = np.arange(10)
 z = x.sum()
 
 
+z = np.sum(x)
+
+#分散
+z = np.var(x)
 
 
+#標準偏差
+z = np.std(x)
+
+#行列の行方向の計算
+x = x.reshape((2,5))
+
+z = np.mean(x,axis=1)#各行の平均？
+
+#行列の列方向の計算
+
+z = np.mean(x,axis=0)#各列の平均？
 
 
-
-
-
-
-
+#<ソートしてトップ3を抽出>
 
 
 print(z)
