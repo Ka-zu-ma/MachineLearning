@@ -166,6 +166,31 @@ z = np.mean(x,axis=0)#各列の平均？
 
 
 #<ソートしてトップ3を抽出>
+x = np.arange(5)*2
+z = np.random.shuffle(x)
+
+#昇順にソート
+z = np.sort(x)
+
+#降順にソート
+z = np.sort(x)[::-1]
+
+#数値の大きい順にtop3を取得
+z = np.sort(x)[-3:][::-1]
+
+#昇順にソートして、その要素の元のインデックスを取得
+z = np.argsort(x)
+
+#<配列の各要素に対してユーザー定義の関数を適用する>
+
+x = np.arange(5)
+
+#要素を2乗する
+vf = np.vectorize(lambda x: x*x)
+z = vf(x)
+
+
+
 
 
 print(z)
