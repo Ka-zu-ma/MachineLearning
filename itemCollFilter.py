@@ -4,29 +4,27 @@
 
 import numpy as np
 import pandas as pd
+from scipy import sparse
 from scipy.spatial.distance import cosine
 
 #sepで区切り文字指定、namesでカラム名指定
-df = pd.read_csv('u.data', sep = '\t', names = ['user_id','item_id','rating','timestamp'])
+df = pd.read_csv('ml-100k/u.data', sep = '\t', names = ['user_id','item_id','rating','timestamp'])
 
-print(df)
+print (df)
 
-shape = (df.max().ix['user_id'],df.max().ix['item_id'])
+shape = (df.max().ix['user_id'] + 1, df.max().ix['item_id'] + 1)
 
-#ゼロ埋めの初期化　ダブルで渡すと、多次元配列が可能
-R = np.zeros(shape)
-
-# print(shape)
-print(R)
+#疎行列を用意
+R = sparse.lil_matrix(shape)
 
 
 
 for i in df.index:
-	row = df.ix[i]
-	R[row['user_id'] - 1, row['item_id'] - 1] = row['rating']
+    row = df.ix[i]
+    R[row['user_id'], row['item_id']] = row['rating']
 
-
-print(R);
+#R.todense()で行列の形に戻す
+print(R.todense())
 
 exit()
 
