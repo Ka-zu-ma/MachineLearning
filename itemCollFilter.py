@@ -18,7 +18,7 @@ shape = (df.max().ix['user_id'] + 1, df.max().ix['item_id'] + 1)
 R = sparse.lil_matrix(shape)
 
 
-
+#ここ何やってる？
 for i in df.index:
     row = df.ix[i]
     R[row['user_id'], row['item_id']] = row['rating']
@@ -90,6 +90,8 @@ def predict(u,sims):
 
 	return prediction
 
+#簡単な例で試す。
+#よくわからない
 u = np.array([5, 0, 1])
 sims = np.array([ [1, 0.2, 0], [0.2, 1, 0.1], [0, 0.1, 1] ])
 
