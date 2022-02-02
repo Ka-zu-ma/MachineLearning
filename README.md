@@ -5,8 +5,8 @@
 ### レコメンデーション
 - アイテムベースの協調フィルタリング
 
-### pythonライブラリ
-- numpy
+### Pythonライブラリ
+- NumPy
 
 ### 参考
 - [NumPy使い方](http://goo.gl/iJw6Jk)
