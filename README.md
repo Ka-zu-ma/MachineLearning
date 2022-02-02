@@ -8,4 +8,5 @@
 ### pythonライブラリ
 - numpy
 
-### 参考URLhttp://goo.gl/iJw6Jk
+### 参考
+- [NumPy使い方](http://goo.gl/iJw6Jk)
